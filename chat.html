@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chatapp</title>
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
+        rel="stylesheet" />
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .mdc-card {
+            height: 90vh;
+            width: 70vw;
+            margin: 30px auto 0;
+
+        }
+
+        .p-text-app {
+            font-size: large;
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+            padding: 5px;
+
+        }
+
+        #messagebox {
+            height: auto;
+            width: 100%;
+            padding: 20px;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            background-color: rgb(226, 226, 226);
+        }
+
+        .btn-textarea-send {
+            display: flex;
+            flex-direction: column;
+            padding: 5px;
+        }
+
+        #Message {
+            border-radius: 8px;
+            border: 1px solid darkgray;
+        }
+        
+
+        .divchat {
+            overflow: hidden;
+            margin: 5px;
+            padding: 5px 10px;
+            border-radius: 8px;
+            border: 1px solid darkslategrey;
+            background-color: whitesmoke;
+            width: 60%;
+        }
+
+        .mydivchat {
+            float: right;
+            margin: 5px;
+            padding: 5px 10px;
+            border-radius: 8px;
+            border: 1px solid darkslategrey;
+            background-color: whitesmoke;
+            width: 60%;
+            text-align: right;
+        }
+
+        .settime
+        {
+            margin-left: 5px;
+        }
+        .smalltext {
+            float: right;
+        }
+
+        .messagestag {
+            margin-top: 16px;
+            text-align: justify;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="mdc-card">
+        <div>
+            <p class="p-text-app">Notion Chat-app</p>
+        </div>
+        <div id="messagebox"></div>
+        <div class="btn-textarea-send">
+            <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--textarea mdc-text-field--no-label">
+                <span class="mdc-notched-outline">
+                    <span class="mdc-notched-outline__leading"></span>
+                    <span class="mdc-notched-outline__trailing"></span>
+                </span>
+                <span class="mdc-text-field__resizer">
+                    <textarea class="mdc-text-field__input" rows="2" cols="10" aria-label="Label" placeholder="Message"
+                        id="Message"></textarea>
+                </span>
+            </label><br>
+            <button class="mdc-button mdc-button--outlined" onclick="sendMessage()">
+                <span class="mdc-button__ripple"></span>
+                <span class="mdc-button__label">Send Message</span>
+            </button>
+        </div>
+    </div>
+    <!-- script tag -->
+    <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore-compat.js"></script>
+    <script src="./chat.js"></script>
+</body>
+
+</html>
